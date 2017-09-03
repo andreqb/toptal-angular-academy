@@ -8,6 +8,7 @@ import { StoreComponent } from './store/store.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductComponent } from './product/product.component';
 import { AddressComponent } from './address/address.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AddressComponent } from './address/address.component';
     StoreComponent,
     CheckoutComponent,
     ProductComponent,
-    AddressComponent
+    AddressComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,

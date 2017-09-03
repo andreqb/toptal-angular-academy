@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreComponent } from "./store/store.component";
 import { CheckoutComponent } from "./checkout/checkout.component";
+import { ConfirmComponent } from "./confirm/confirm.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'store' },
   { path: 'store', component: StoreComponent },
-  { path: 'checkout', component: CheckoutComponent }
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'confirm', component: ConfirmComponent }
 ];
 
 @NgModule({
