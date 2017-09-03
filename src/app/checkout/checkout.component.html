@@ -1,0 +1,15 @@
+<div *ngFor="let product of products" >
+  <app-product [product]="product"></app-product>
+</div>
+
+Shipping
+<app-address></app-address>
+
+Billing
+<app-address></app-address>
+
+<hr/>
+
+  <a href="" [routerLink]="['/order']" role="button" class="small btn btn-success">
+  <i class="fa fa-2x" aria-hidden="true">Place Order</i>
+</a>
