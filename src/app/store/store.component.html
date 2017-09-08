@@ -1,11 +1,12 @@
 <div >
   <a href="" [routerLink]="['/checkout']" role="button" class="small btn btn-success">
-  <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"> Checkout</i>
+  <i class="fa fa-shopping-cart fa-1x" aria-hidden="true"> Checkout</i>
+  {{counter | async}}
 </a>
 </div>
 <app-products [products]="products"></app-products>
 <div>
   <a href="" [routerLink]="['/checkout']" role="button" class="small btn btn-success">
-  <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"> Checkout</i>
+  <i class="fa fa-shopping-cart fa-1x" aria-hidden="true"> Checkout</i>
 </a>
 </div>

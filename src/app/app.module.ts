@@ -9,6 +9,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductComponent } from './product/product.component';
 import { AddressComponent } from './address/address.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { StoreModule } from '@ngrx/store';
+import { cartReducer } from './cart';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.provideStore({ counter: cartReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

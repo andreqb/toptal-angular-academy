@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from "../models/product";
+import { IAppState } from "../store";
+import { Observable } from "rxjs/Observable";
+import { Store } from "@ngrx/store";
 
 @Component({
   selector: 'app-store',
@@ -7,8 +10,10 @@ import { Product } from "../models/product";
   styleUrls: ['./store.component.scss']
 })
 export class StoreComponent implements OnInit {
-
-  constructor() { }
+counter: Observable<number>;
+	constructor(private store: Store<IAppState>){
+		this.counter = store.select('counter');
+	}
 
   products: Array<Product> = new Array<Product>();
   
