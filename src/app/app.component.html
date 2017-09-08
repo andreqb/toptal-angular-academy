@@ -3,5 +3,10 @@
   <a class="navbar-brand" href="#">Angular Academy Store</a>
 </nav>
 <div class="container-fluid pb-s">
+  <div class="row">
+  <div class="col-4"><a href="" [routerLink]="['/']"> Products</a></div>
+  <div class="col-4"><a href="" [routerLink]="['/users']">Users</a></div>
+  <div class="col-4"><a href=""  [routerLink]="['/orders']">Orders</a></div>
+  </div>
 <router-outlet></router-outlet>
 </div>
