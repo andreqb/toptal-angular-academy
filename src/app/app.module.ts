@@ -12,6 +12,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { StoreModule } from '@ngrx/store';
 import { cartReducer } from './cart';
 import { UsersComponent } from './users/users.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UsersComponent } from './users/users.component';
     ProductComponent,
     AddressComponent,
     ConfirmComponent,
-    UsersComponent
+    UsersComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

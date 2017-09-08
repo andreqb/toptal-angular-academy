@@ -1,0 +1,37 @@
+<ng-container *ngFor="let order of orders">
+  <div class="row user-row" (click)="displayedOrder = order">
+    <div class="col-4"><span>{{order.purchased}}</span></div>
+    <div class="col-4"><span>{{order.user.firstName}}</span></div>
+    <div class="col-4"><span>{{order.user.lastName}}</span></div>
+  </div>
+
+  <ng-container *ngIf="order.id === displayedOrder?.id">
+    <div class="row">
+      <div class="col-6">
+        <div>
+          <span>{{order.user.billingAddress.address1}}</span>
+        </div>
+        <div>
+          <span>{{order.user.billingAddress.address2}}</span>
+        </div>
+        <div>
+          <span>{{order.user.billingAddress.city}}, {{order.user.billingAddress.state}} {{order.user.billingAddress.postalCode}}</span>
+        </div>
+      </div>
+      <div class="col-6">
+        <div>
+          <span>{{order.user.shippingAddress.address1}}</span>
+        </div>
+        <div>
+          <span>{{order.user.shippingAddress.address2}}</span>
+        </div>
+        <div>
+          <span>{{order.user.shippingAddress.city}}, {{order.user.shippingAddress.state}} {{order.user.shippingAddress.postalCode}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let product of order.products">
+      <app-product [product]="product"></app-product>
+    </div>
+  </ng-container>
+</ng-container>
