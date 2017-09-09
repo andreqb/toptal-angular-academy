@@ -10,7 +10,7 @@ import { ProductComponent } from './product/product.component';
 import { AddressComponent } from './address/address.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from './cart';
+import { cartReducer } from './cartReducer';
 import { UsersComponent } from './users/users.component';
 import { OrdersComponent } from './orders/orders.component';
 
@@ -29,7 +29,7 @@ import { OrdersComponent } from './orders/orders.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.provideStore({ counter: cartReducer })
+    StoreModule.provideStore({ order: cartReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

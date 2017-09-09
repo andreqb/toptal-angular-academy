@@ -1,7 +1,7 @@
 <div >
   <a href="" [routerLink]="['/checkout']" role="button" class="small btn btn-success">
   <i class="fa fa-shopping-cart fa-1x" aria-hidden="true"> Checkout</i>
-  {{counter | async}}
+  {{(productsWanted | async)?.length}}
 </a>
 </div>
 <app-products [products]="products"></app-products>

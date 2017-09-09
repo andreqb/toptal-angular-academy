@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from "../models/product";
 import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from '../cart';
-import { IAppState } from "../store";
+import { INCREMENT } from '../cartActions';
+import { IAppState2 } from "../store";
 import { Observable } from "rxjs/Observable";
 
 @Component({
@@ -12,15 +12,14 @@ import { Observable } from "rxjs/Observable";
 })
 export class ProductComponent implements OnInit {
 @Input() product: Array<Product>;
-counter: Observable<number>;
-	constructor(private store: Store<IAppState>){
-		this.counter = store.select('counter');
+	constructor(private store: Store<IAppState2>){
+
 	}
 
   ngOnInit() {
   }
 
   addToCart(product){
-    this.store.dispatch({ type: INCREMENT });
+    this.store.dispatch({ type: INCREMENT, payload: { product:product } });
   }
 }
