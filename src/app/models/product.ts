@@ -3,8 +3,10 @@ export class Product {
     description: string;
     price: number;
     url: string;
-    constructor(name: string, description: string, price: number)
+    id: number;
+    constructor(id: number, name: string, description: string, price: number)
     {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;

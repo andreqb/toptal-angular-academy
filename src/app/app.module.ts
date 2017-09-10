@@ -14,6 +14,8 @@ import { cartReducer } from './cartReducer';
 import { UsersComponent } from './users/users.component';
 import { OrdersComponent } from './orders/orders.component';
 import { FormsModule } from "@angular/forms";
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { ProductService } from "./services/product.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FormsModule } from "@angular/forms";
     AddressComponent,
     ConfirmComponent,
     UsersComponent,
-    OrdersComponent
+    OrdersComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { FormsModule } from "@angular/forms";
     StoreModule.provideStore({ order: cartReducer }),
     FormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
