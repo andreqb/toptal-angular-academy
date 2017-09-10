@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { cartReducer } from './cartReducer';
 import { UsersComponent } from './users/users.component';
 import { OrdersComponent } from './orders/orders.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { OrdersComponent } from './orders/orders.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.provideStore({ order: cartReducer })
+    StoreModule.provideStore({ order: cartReducer }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

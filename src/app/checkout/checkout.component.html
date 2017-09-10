@@ -1,15 +1,95 @@
-<div *ngFor="let product of products" >
-  <app-product [product]="product"></app-product>
+<div class="row product-row" *ngFor="let product of products | async">
+  <div class="col-4"><span>{{product.name}}</span></div>
+  <div class="col-4">
+    <div class="form-group row">
+      <span>{{product.price | currency:'USD':true}}</span>
+    </div>
+  </div>
 </div>
 
-Shipping
-<app-address></app-address>
+<form #checkoutForm="ngForm" (ngSubmit)="submitOrder(checkoutForm)">
 
-Billing
-<app-address></app-address>
+
+  <div class="row">
+    <div class="col-3" ngModelGroup="shipping">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{addressType}}</h4>
+
+
+          <div class="form-group row">
+            <label for="address" class="col-2 col-form-label">Address</label>
+            <div class="col-10">
+              <input ngModel #adderss1="ngModel" name="address" class="form-control" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="city" class="col-2 col-form-label">City</label>
+            <div class="col-10">
+              <input ngModel #city="ngModel" name="city" class="form-control" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="state" class="col-2 col-form-label">State</label>
+            <div class="col-10">
+              <input ngModel #state="ngModel" name="state" class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="postalcode" class="col-2 col-form-label">Postal Code</label>
+            <div class="col-10">
+              <input ngModel #postalcode="ngModel" name="postalcode" class="form-control" type="text" value="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3" ngModelGroup="billing">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{addressType}}</h4>
+
+
+          <div class="form-group row">
+            <label for="address" class="col-2 col-form-label">Address</label>
+            <div class="col-10">
+              <input ngModel #adderss1="ngModel" name="address" class="form-control" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="city" class="col-2 col-form-label">City</label>
+            <div class="col-10">
+              <input ngModel #city="ngModel" name="city" class="form-control" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="state" class="col-2 col-form-label">State</label>
+            <div class="col-10">
+              <input ngModel #state="ngModel" name="state" class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="postalcode" class="col-2 col-form-label">Postal Code</label>
+            <div class="col-10">
+              <input ngModel #postalcode="ngModel" name="postalcode" class="form-control" type="text" value="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-success">
+  <i class="fa fa-2x" aria-hidden="true">Place Order</i>
+</button>
+</form>
+
+
+
+
 
 <hr/>
-
-  <a href="" [routerLink]="['/confirm']" role="button" class="small btn btn-success">
-  <i class="fa fa-2x" aria-hidden="true">Place Order</i>
-</a>

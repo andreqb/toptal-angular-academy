@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-address',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-
+@Input() addressType: string;
   constructor() { }
 
   ngOnInit() {
