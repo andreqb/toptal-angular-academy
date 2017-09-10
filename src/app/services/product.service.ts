@@ -24,4 +24,12 @@ export class ProductService {
     console.log('id:' + id + ' name:' + name + ' description:' + description + 'price:' + price)
   }
 
+  createProduct(name: string, description: string, price: number){
+    console.log('creating: name:' + name + ' description:' + description + ' price:' + price)
+  }
+
+  deleteProduct(id: number){
+    console.log(id)
+  }
+
 }

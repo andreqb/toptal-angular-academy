@@ -16,6 +16,8 @@ import { OrdersComponent } from './orders/orders.component';
 import { FormsModule } from "@angular/forms";
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { ProductService } from "./services/product.service";
+import { NgbModal, NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
 
 @NgModule({
   declarations: [
@@ -34,9 +36,10 @@ import { ProductService } from "./services/product.service";
     BrowserModule,
     AppRoutingModule,
     StoreModule.provideStore({ order: cartReducer }),
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
-  providers: [ProductService],
+  providers: [ProductService, NgbModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

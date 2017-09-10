@@ -11,15 +11,28 @@ import { Product } from "../models/product";
 export class EditProductComponent implements OnInit {
 product: Product;
 id: number;
+componentTitle: string;
   constructor(private route: ActivatedRoute, private producService: ProductService) { }
 
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
-    this.product = this.producService.getProductById(this.id);
+    if (this.id){
+      this.product = this.producService.getProductById(this.id);
+      this.componentTitle = 'Edit Product';
+    }
+    else{
+      this.product = new Product(0,'','',0);
+      this.componentTitle = 'Add Product';
+    }
   }
 
   updateProduct(form){
     this.producService.updateProduct(this.id,form.value.name,form.value.description,+form.value.price)
+
+  }
+
+  createProduct(form){
+    this.producService.createProduct(form.value.name,form.value.description,+form.value.price)
 
   }
 }
